@@ -9,7 +9,20 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ViewController : NSViewController
-
+@property (weak) IBOutlet NSTextField *checkdial1;
+@property (weak) IBOutlet NSTextField *checkdial2;
+@property (weak) IBOutlet NSTextField *checkdial3;
+@property (weak) IBOutlet NSTextField *checkdial4;
+- (IBAction)sub_div:(id)sender;
+@property (weak) IBOutlet NSSlider *slider3;
+@property (weak) IBOutlet NSSlider *slider1;
+@property (weak) IBOutlet NSSlider *slider4;
+@property (weak) IBOutlet NSSlider *slider2;
+@property NSInteger right_dial_value;
+@property NSInteger left_dial_value;
+@property (weak) IBOutlet NSTextFieldCell *right_dail;
+@property (weak) IBOutlet NSTextField *left_dial;
+- (IBAction)add_mult:(id)sender;
 
 @end
 
