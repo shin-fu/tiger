@@ -51,7 +51,12 @@
     self.right_dial_value += v1+v2*10+v3*100+v4*1000;
     NSLog(@"%ld",self.right_dial_value);
     self.left_dial_value += 1;
-    [self.right_dail setIntegerValue:self.right_dial_value];
+    [self updateRightValue:self.right_dial_value];
+    [self.left_dial setIntegerValue:self.left_dial_value];
+}
+
+- (IBAction)leftButton:(id)sender {
+    self.left_dial_value = 0;
     [self.left_dial setIntegerValue:self.left_dial_value];
 }
 - (IBAction)sub_div:(id)sender {
@@ -63,8 +68,26 @@
     self.right_dial_value -= v1+v2*10+v3*100+v4*1000;
     self.left_dial_value -= 1;
     NSLog(@"%ld",self.right_dial_value);
-    [self.right_dail setIntegerValue:self.right_dial_value];
+    [self updateRightValue:self.right_dial_value];
     [self.left_dial setIntegerValue:self.left_dial_value];
+    
 }
 
+- (IBAction)rightButton:(id)sender {
+    self.right_dial_value = 0;
+    [self.right_dail setIntegerValue:0];
+    [self.right_dial2 setIntegerValue:0];
+    [self.right_dial3 setIntegerValue:0];
+    [self.right_dial4 setIntegerValue:0];
+}
+
+- (void) updateRightValue:(int)value{
+    [self.right_dail setIntegerValue:value%10];
+    value /= 10;
+    [self.right_dial2 setIntegerValue:value%10];
+    value /= 10;
+    [self.right_dial3 setIntegerValue:value%10];
+    value /= 10;
+    [self.right_dial4 setIntegerValue:value%10];
+}
 @end

@@ -19,10 +19,16 @@
 @property (weak) IBOutlet NSSlider *slider4;
 @property (weak) IBOutlet NSSlider *slider2;
 @property NSInteger right_dial_value;
+- (IBAction)rightButton:(id)sender;
 @property NSInteger left_dial_value;
 @property (weak) IBOutlet NSTextFieldCell *right_dail;
 @property (weak) IBOutlet NSTextField *left_dial;
 - (IBAction)add_mult:(id)sender;
+- (IBAction)leftButton:(id)sender;
+@property (weak) IBOutlet NSTextField *right_dial2;
+@property (weak) IBOutlet NSTextField *right_dial3;
+@property (weak) IBOutlet NSTextField *right_dial4;
+
 
 @end
 
